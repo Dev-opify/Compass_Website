@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compass — Official GDG App · IILM Chapter</title>
+
+  <!-- Google fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">C</div>
+        <div class="brand-text">
+          <h1>Compass</h1>
+          <p class="muted">Official GDG App — IILM Chapter</p>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#download" class="nav-link cta-link">Download</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Hero -->
+      <section class="hero" id="home">
+        <div class="hero-left">
+          <div class="kicker pill">
+            <span class="dot google-blue"></span>
+            <span>Official GDG · IILM Chapter</span>
+          </div>
+
+          <h2 class="hero-title">Compass — Attend, Manage & Grow<br><span class="accent">GDG events the smart way</span></h2>
+          <p class="lead">
+            Compass is the official GDG IILM Chapter mobile app that simplifies event discovery, team registration, QR check-ins, ticketing and attendance tracking — with a lightweight admin dashboard for organisers.
+          </p>
+
+          <div class="cta-row">
+            <!-- Make sure to upload your APK to your server and keep the href path -->
+            <a id="downloadBtn" class="btn primary" href="downloads/compass.apk" download>
+              <span class="material-icons">download</span> Download APK
+            </a>
+
+            
+          </div>
+
+          <div class="feature-grid">
+            <div class="mini"><strong>Login & Auth</strong><div class="mini-desc">Fast sign-in using email/password & secure auth</div></div>
+            <div class="mini"><strong>Event tickets</strong><div class="mini-desc">My Tickets, QR generation & scanning</div></div>
+            <div class="mini"><strong>Team join</strong><div class="mini-desc">Secret codes to register teams</div></div>
+            <div class="mini"><strong>Admin dashboard</strong><div class="mini-desc">Monitor registrations & attendance</div></div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="phone-mock" id="phoneMock" aria-hidden="true">
+            <div class="screen">
+              <div class="topbar">
+                <div class="status">Compass</div>
+                <div class="time" id="mockTime">12:16</div>
+              </div>
+
+              <div class="events" id="mockEvents">
+                <!-- JS will populate a few mock cards -->
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="features">
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>Discover & Register</h3>
+          <p class="muted">Browse upcoming GDG events, register with a tap and receive a digital ticket in your account.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>Team Registration</h3>
+          <p class="muted">Create or join teams using secret codes — designed for hackathons and group-based events.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>QR Tickets & Attendance</h3>
+          <p class="muted">Generate QR tickets and check-in participants with the in-app scanner. Attendance logs are synced to admin console.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>Admin Dashboard</h3>
+          <p class="muted">Event creators can filter registrations, view attendance stats and export participant lists.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>Secure Authentication</h3>
+          <p class="muted">Built on Firebase Auth for secure and reliable user management.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="kicker">Feature</div>
+          <h3>Offline-friendly</h3>
+          <p class="muted">Cached tickets and fast local scanning — works even with intermittent connectivity.</p>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works" class="how">
+        <h3>How Compass works — in 3 steps</h3>
+        <ol class="steps">
+          <li><strong>Sign up</strong> — register using email and create a profile for GDG events.</li>
+          <li><strong>Join or create teams</strong> — use secret codes for team-based events and hackathons.</li>
+          <li><strong>Attend & scan</strong> — show your ticket QR or scan participants to mark attendance.</li>
+        </ol>
+      </section>
+
+      <!-- CTA Strip -->
+      <section id="download" class="cta-strip">
+        <div>
+          <h3>Ready to experience Compass?</h3>
+          <p class="muted">Install the official GDG IILM Chapter app on your Android device.</p>
+        </div>
+        <div class="cta-actions">
+          <a id="downloadBtnFooter" class="btn primary" href="downloads/compass.apk" download>
+            <span class="material-icons">mobile_friendly</span> Download APK
+          </a>
+          <a class="btn outline" href="#how-it-works">Learn more</a>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p class="muted">Compass — Official GDG App · IILM Chapter · Built with ❤️ for developers & learners.</p>
+        <p class="muted small">Make sure you only install APKs from trusted sources. Upload the APK to your server and keep the <code>downloads/compass.apk</code> path (or update the HTML to the path you choose).</p>
+      </footer>
+    </main>
+
+    <!-- small toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
