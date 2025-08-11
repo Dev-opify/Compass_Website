@@ -470,3 +470,9 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #04122
     border-radius: 10px; /* match the original logo style */
     background-color: #fff;
 }
+#features{
+  scroll-margin-top: 200px
+}
+#how-it-works {
+  scroll-margin-top: 80px; 
+}

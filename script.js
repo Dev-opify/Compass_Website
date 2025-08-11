@@ -76,22 +76,36 @@ document.addEventListener('DOMContentLoaded', () => {
   updateMockTime();
   setInterval(updateMockTime, 60_000);
   // Enhanced smooth scroll for nav links
+  document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
+
       const href = a.getAttribute('href');
       const target = document.querySelector(href);
+
       if (target) {
-        const headerHeight = document.querySelector('.site-header').offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight - 20;
-        
+        const headerHeight = document.querySelector('.site-header').offsetHeight || 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth'
         });
+
+        // Auto-close mobile menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.top-nav');
+        if (navMenu?.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
       }
     });
   });
+});
+
+
   // Enhanced demo interaction
   const tryDemo = document.getElementById('tryDemo');
   const phoneMock = document.getElementById('phoneMock');
