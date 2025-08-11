@@ -20,11 +20,12 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #04122
 .brand { display: flex; gap: 12px; align-items: center; animation: slideInDown 0.8s ease-out; }
 .logo {
   width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+  /* background: linear-gradient(135deg, var(--google-blue), var(--google-green)); */
   font-weight: 800; font-size: 20px; color: white;
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
   transition: all 0.3s ease;
   animation: pulse 2s ease-in-out infinite;
+  background-color: #fff;
 }
 .logo:hover { transform: scale(1.1) rotate(5deg); }
 .brand-text h1 { margin: 0; font-size: 18px; transition: color 0.3s ease; }
@@ -374,7 +375,7 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #04122
 /* Enhanced responsive design */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-  .hero-right { order: -1; }
+  .hero-right { order: 2; }
   .phone-mock { max-width: 360px; margin: 0 auto; }
   .lead { max-width: 100%; }
 }
@@ -462,3 +463,10 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #04122
 .feature-card:nth-child(4) { animation-delay: 0.4s; }
 .feature-card:nth-child(5) { animation-delay: 0.5s; }
 .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+.logo img {
+    width: 52px; /* or whatever fits */
+    height: auto;
+    border-radius: 10px; /* match the original logo style */
+    background-color: #fff;
+}
